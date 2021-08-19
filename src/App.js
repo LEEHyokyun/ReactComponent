@@ -1,11 +1,26 @@
-import React, { Children } from 'react'
+import React from 'react'
 import './App.css';
 
-function List({rating}) {
+const foodList = [
+  {
+    name : "Ramen",
+    rating : 9
+  },
+  {
+    name : "soup",
+    rating : 7
+  },
+  {
+    name : "rice",
+    rating : 8
+  }
+]
+
+function List({props}) {
   return (
     <>
   <h2>This is children component!</h2>
-  <h3>My food's rating is {rating}</h3>
+  <h3>My favorite food's name is {props}</h3>
     </>
   )
 }
@@ -15,7 +30,7 @@ function App() {
   return (
     <div>
       <h1>Hello</h1>
-      <List food_name="Ramen" rating={5} />
+      {foodList.map(item => (<List name={item.name}/>))}
     </div>
   );
 }
