@@ -28,12 +28,17 @@ function List({name, rating}) {
   )
 }
 
+function renderList(props){
+  //console.log(props)
+  return <List key={props.id} name={props.name} rating={props.rating}/>
+}
+
 function App() {
   
   return (
     <div>
       <h1>Hello</h1>
-      {foodList.map( item => (<List key={item.id} name={item.name} rating={item.rating}/>))}
+      {foodList.map(renderList)}
     </div>
   );
 }
