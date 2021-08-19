@@ -1,13 +1,21 @@
-import React from 'react'
+import React, { Children } from 'react'
 import './App.css';
-import Component1 from './component1';
+
+function List({rating}) {
+  return (
+    <>
+  <h2>This is children component!</h2>
+  <h3>My food's rating is {rating}</h3>
+    </>
+  )
+}
 
 function App() {
   
   return (
     <div>
       <h1>Hello</h1>
-      <Component1/>
+      <List food_name="Ramen" rating={5} />
     </div>
   );
 }
