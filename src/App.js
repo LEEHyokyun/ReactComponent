@@ -1,5 +1,6 @@
 import React from 'react'
 import './App.css';
+import PropTypes from 'prop-types'
 
 const foodList = [
   {
@@ -31,6 +32,11 @@ function List({name, rating}) {
 function renderList(props){
   //console.log(props)
   return <List key={props.id} name={props.name} rating={props.rating}/>
+}
+
+renderList.propTypes = {
+  name : PropTypes.string.isRequired,
+  rating : PropTypes.number.isRequired
 }
 
 function App() {
